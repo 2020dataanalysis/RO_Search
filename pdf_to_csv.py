@@ -42,21 +42,6 @@ def string_to_int_if_float(value):
     else:
         return None
 
-# # Example usage
-# test_str1 = "123.45"
-# test_str2 = "abc"
-# test_str3 = "456"
-
-# print(f"Is '{test_str1}' a float? {is_float(test_str1)}")  # Output: True
-# print(f"Converted '{test_str1}' to int: {string_to_int_if_float(test_str1)}")  # Output: 123
-
-# print(f"Is '{test_str2}' a float? {is_float(test_str2)}")  # Output: False
-# print(f"Converted '{test_str2}' to int: {string_to_int_if_float(test_str2)}")  # Output: None
-
-# print(f"Is '{test_str3}' a float? {is_float(test_str3)}")  # Output: True
-# print(f"Converted '{test_str3}' to int: {string_to_int_if_float(test_str3)}")  # Output: 456
-
-
 # Function to remove \r characters from a string
 def remove_carriage_returns(value):
     return value.replace('\r', '')
@@ -153,7 +138,7 @@ def process(rows):
                     row2 = [ro, last, col_first, col_year, col_make, col_model, col_description, col_date, col_v, col_invoice ]
                     # print(row2)
 
-                    if ro == '11117':
+                    if ro == '10569':
                         print(row)
                         print(row2)
                     # data.append(row2)
@@ -186,9 +171,9 @@ data = []
 for df in dfs:
     # Combine all columns into a single string for each row
     # combined_rows = dfs[0].apply(lambda row: ','.join(row.astype(str)), axis=1).tolist()
-    print('******************** Level 1:')
+    # print('******************** Level 1:')
     combined_rows = df.apply(lambda row: ','.join(row.astype(str)), axis=1).tolist()
-    print(combined_rows)
+    # print(combined_rows)
 
     # Split multi-line rows into separate lines
     # split_rows = split_multiline_rows(combined_rows)
