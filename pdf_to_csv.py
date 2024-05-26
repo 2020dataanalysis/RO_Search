@@ -15,14 +15,12 @@ def split_multiline_rows(rows):
     return split_rows
 
 
-
 def is_int(value):
     try:
         int(value)
         return True
     except ValueError:
         return False
-
 
 
 def is_float(value):
@@ -45,7 +43,6 @@ def string_to_int_if_float(value):
 # Function to remove \r characters from a string
 def remove_carriage_returns(value):
     return value.replace('\r', '')
-
 
 
 def process(rows):
@@ -112,10 +109,7 @@ def process(rows):
                         # return row2
                         if len(row2) == 10:
                             table.append(row2)
-
-
-
-
+                            continue
 
             # print(ro)
             if ro_last[0].isdigit():
@@ -138,9 +132,9 @@ def process(rows):
                     row2 = [ro, last, col_first, col_year, col_make, col_model, col_description, col_date, col_v, col_invoice ]
                     # print(row2)
 
-                    if ro == '10569':
-                        print(row)
-                        print(row2)
+                    # if ro == '10569':
+                    #     print(row)
+                    #     print(row2)
                     # data.append(row2)
                     # return row2
                     if len(row2) == 10:
@@ -164,6 +158,7 @@ def to_csv(processed_data):
 
 
 # Read the first page of the PDF file and convert to DataFrame
+# dfs = tabula.read_pdf("sample.pdf", pages=5, multiple_tables=True)
 dfs = tabula.read_pdf("sample.pdf", pages='all', multiple_tables=True)
 # print(dfs)
 data = []
@@ -184,8 +179,8 @@ for df in dfs:
     # table = process(split_rows)
     table = process(combined_rows)
     if table:
-        # print('******************************')
-        # print(table)
+        print('******************************')
+        print(table)
         for row in table:
             data.append(row)
 
