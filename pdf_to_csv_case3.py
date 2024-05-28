@@ -29,7 +29,7 @@ def remove_carriage_returns(value):
 
 
 
-def format_row(row):
+def transform_row(row):
     ro = row[0]
     last = row[1]
     first = row[2]
@@ -57,7 +57,7 @@ def process(rows):
                 last = row[0][len(ro)+1:]
                 row[0] = ro
                 row[1] = last
-                row = format_row(row)
+                row = transform_row(row)
                 table.append(row)
 
         elif len(ro_last) == 1:
@@ -69,7 +69,7 @@ def process(rows):
                 ro = string_to_int_if_float(ro_str)
             if ro:
                 row[0] = ro
-                row = format_row(row)
+                row = transform_row(row)
                 table.append(row)
         else:
             # Case 3: Check for carrage return
