@@ -1,3 +1,35 @@
+"""
+PDF to CSV Converter
+
+This script reads tabular data from a PDF file, processes and formats the data, 
+and saves it to a CSV file. The script uses the tabula library to extract tables 
+from the PDF and pandas for data manipulation.
+
+Functions:
+    is_int(value) -> bool: Checks if a value is an integer.
+    is_float(value) -> bool: Checks if a value is a float.
+    string_to_int_if_float(value) -> int or None: Converts a float string to an integer.
+    remove_carriage_returns(value) -> str: Removes carriage returns from a string.
+    transform_row(row) -> list: Formats a row of data.
+    process_row(row) -> list or None: Processes a single row of data.
+    process(rows) -> list: Processes multiple rows of data.
+    to_csv(processed_data, filename='output.csv'): Saves processed data to a CSV file.
+    main(): Main function to execute the script.
+
+Usage:
+    Run this script directly to convert a PDF file named 'sample.pdf' to 'output.csv'.
+
+Dependencies:
+    - tabula-py
+    - pandas
+
+Author: Sam Portillo
+Date: 2024-05-27
+"""
+
+
+
+
 import tabula
 import pandas as pd
 import math
