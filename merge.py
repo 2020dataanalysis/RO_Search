@@ -55,7 +55,7 @@ def to_csv(processed_data, columns, file_name):
 
 if __name__ == '__main__':
     sheet = get_csv('tax_sheet.csv')
-    rc_data = get_csv('rc_report.csv')
+    rc_data = get_csv('sublet.csv')
     payables = get_csv('payables.csv')
 
     sheet_merge = []
