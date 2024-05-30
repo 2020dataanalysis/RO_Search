@@ -125,6 +125,10 @@ def to_csv(processed_data):
     else:
         print("No data processed.")
 
+
+
+
+
 dfs = tabula.read_pdf("sample.pdf", pages='all', multiple_tables=True)
 data = []
 
